@@ -1,51 +1,89 @@
+html {
+    height: 100%;
+    width: 100%
+}
+
 body {
-    font-family: sans-serif;
-    margin:0;
- }
- header{
-    padding: 1%;
-    background-color: #186CA3;
-    color: white;
-    }
- .container{
+    background: url(../images/background.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: 100% 100%;
+    overflow: hidden;
+    display: block;
+    height: 100%;
+}
+
+#main-container-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+    width: 100%;
+}
+
+.header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
- }
- .menu-block{
-     width:20%;
-     background-color:grey;
-     color:white;
-     height:100vh;
- }
- 
- .menu-item{
-    width:100%;
-    padding:5%;
-    border-top:1px solid white;
-    border-bottom: 1px solid white;
-    font-size:100%;
- }
- 
- .board-container{
-     width:80%;
-     padding: 2%;
- }
- input{
-    padding: 1%;
-    border: 1px solid;
-    width:82%;
-    font-size:90%;
- }
- #add-board-btn{
-    background-color: green;
-    color: white;
-    padding:10px 25px 10px 25px;
-    border:0;
-    margin-right:30px;
- }
- .input-board{
-    display:flex;
-    flex-direction: row;
+    margin: 10px;
+}
+
+.title-container {
+    display: flex;
+    flex-direction: column;
     justify-content: space-between;
- }
+}
+
+.login-button {
+    background-color: blue;
+    padding: 8px 5px 8px 5px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 80%;
+    border-color: white;
+    width: 100px;
+    margin-right: 10px;
+
+}
+
+.title {
+    font-family: 'Montez', cursive;
+    font-size: 30px;
+    color: blue;
+    margin: 0;
+}
+
+.sub-title {
+    font-family: 'Marck Script', cursive;
+    font-size: 10;
+    color: black;
+    margin: 0;
+}
+
+.loginButtons {
+    padding: 10px;
+}
+
+.post-button {
+    background: #cfb53b;
+    padding: 8px 5px 8px 5px;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 80%;
+    border-color: white;
+    width: 120px;
+    margin-right: 10px;
+}
+
+.postButtons {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+textarea {
+    margin-top: 10px;
+}
