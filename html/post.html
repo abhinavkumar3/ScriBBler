@@ -2,14 +2,19 @@
 <html>
 
 <head>
-    <title>ScriBBler</title>
 
-    <!-- locations of css files -->
-    <link href='styles\index.css' rel='stylesheet' type='text/css'>
-    <link href='styles\common.css' rel='stylesheet' type='text/css'>
-    <link href='styles\createpost.css' rel='stylesheet' type='text/css'>
+    <title>
+        Individual_Post
+    </title>
 
-    <!-- fonts  -->
+    <!--  CSS -->
+    <link href='..\styles\postslist.css' rel='stylesheet' type='text/css'>
+    <link href='..\styles\header.css' rel='stylesheet' type='text/css'>
+    <link href='..\styles\post.css' rel='stylesheet' type='text/css'>
+
+    <!-- TODO: Include Font Awesome file here -->
+    <!-- TODO: Include Google Fonts file here -->
+
     <link href="https://fonts.googleapis.com/css?family=Montez|Roboto|Ubuntu+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"
           type="text/css" media="screen"/>
@@ -20,8 +25,7 @@
 </head>
 
 <body>
-
-<!-- TODO: Include all your code for the header and home page here -->
+<!-- TODO: Include code for header here -->
 
 <div id="main-container-div">
     <!-- code for Sign Up, Sign In button and headers-->
@@ -35,14 +39,8 @@
             <button onclick="showSignInModal()" class="login-button" type="button">Sign In</button>
         </div>
     </div>
-
-    <div class="postButtons">
-        <!-- Insert code for All Posts & Create Post button here -->
-        <button onclick="navigateToBlogList()" class="post-button" type="button">All Posts</button>
-        <button onclick="showCreatePost()" class="post-button" type="button">Create Post</button>
-    </div>
-
 </div>
+
 
 <!-- Sign Up modal  -->
 <div>
@@ -50,7 +48,7 @@
         <div class="modal-content-signup">
 
             <div class="modal-head">
-                <h2 class="modal-title">Get Started<span onclick="hideSignUpModal()" id="close"
+                <h2 class="modal-title">Get Started<span onclick="hideSignUpModal()" id="btnClose"
                                                          class="close">&times;</span></h2>
             </div>
             <hr>
@@ -63,7 +61,7 @@
                 <input type="password" id="inpPassword" placeholder="Enter your password" required>
                 <label for="confirm_password" class="label-text">Confirm Password</label>
                 <input type="password" id="inpConfirmPassword" placeholder="Re-Enter your password" required>
-                <button type="submit" onclick="signup(firstName,lastName, email, password, mobile)" class="greenButton">
+                <button type="submit" onclick="signup(firstName,lastName, email, password, mobile)" class="Greenbutton">
                     Sign up
                 </button>
             </form>
@@ -78,7 +76,7 @@
         <div class="modal-content-signin">
 
             <div class="modal-head">
-                <h2 class="modal-title">Welcome Back!<span onclick="hideSignInModal()" id="close"
+                <h2 class="modal-title">Welcome Back!<span onclick="hideSignInModal()" id="btnClose"
                                                            class="close">&times;</span></h2>
             </div>
             <hr>
@@ -87,7 +85,7 @@
                 <input type="text" id="inpUsername" placeholder="Enter your username" required>
                 <label for="password" class="label-text">Password</label>
                 <input type="password" id="inpPassword" placeholder="Enter your password" required>
-                <button type="submit" onclick="signin(username, password)" class="greenButton">Sign In</button>
+                <button type="submit" onclick="signin(username, password)" class="Greenbutton">Sign In</button>
             </form>
 
             <div class=bottom-banner>Not a member?<span onclick="hideSignInModal();showSignUpModal()" class=signup>Sign Up</span>
@@ -98,32 +96,64 @@
 </div>
 
 
-<div>
-    <!-- Create Post modal  -->
-    <div class="modal" id="create-post-modal">
+<div class="postMainLayout">
 
-        <div class="modal-content-post">
-
-            <div class="modal-head">
-                <h2 class="modal-title">Pen your post <span onclick="hideCreatePostModal()" id="close" class="close">&times;</span>
-                </h2>
-            </div>
-            <hr>
-            <form id=create-post-form>
-                <label for="title" class="label-text">Title</label>
-                <input type="text" id="inpTitle" placeholder="Enter title for your post" required>
-                <label for="contents" class="label-text">Contents</label>
-                <textarea cols="50" rows="10" id="inpContents" name="post-details" form="create-post-form"></textarea>
-                <button type="submit" onclick="createPost()" class="postbutton">Create</button>
-            </form>
+    <div class="blogContent">
+        <div id="blogTitle" class="blogTite">
+            <h id="blogTitleNew">‘let’ me be a ‘const’(ant), not a ‘var’(iable)!</h>
         </div>
     </div>
+    <div class="blogAuthor">
+
+        <!-- Insert code for Edit/Save button and  -->
+
+        <h2 class="postAuthor">Srishti Gupta<span> 
+            <button onclick="editComment()" class="redButton" id="btnEditComment">
+                Edit 
+                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+            </button>
+         </span>
+        </h2>
+
+    </div>
+
+    <div class="Text" id="inpBlogBodyId">
+        <p id="blogBody"> Since JavaScript does not have any type-checking, either of these keywords can be used to
+            declare a variable of any type (datatype) in JavaScript.
+            Though all the three keywords are used for the same purpose, they are different.</p>
+    </div>
+
+
+    <div>
+        <button class="redButton" onclick="incrementCounter()">Like
+            <i class="fa fa-thumbs-up" aria-hidden="true"></i></button>
+        <p class="Text">
+            <span id="counterLikedBy">1</span> person likes this!</p>
+        <p class="Text">Be the first one to like this!</div>
 </div>
 
 
-<!-- Javascript files for common and index  -->
-<script src="scripts\common.js"></script>
-<script src="scripts\index.js"></script>
+<div class="Text">
+    <textarea id="txtCommentCommentPost" class="commentPost" rows="4" cols="160"
+              placeholder="Leave a comment..."></textarea>
+
+</div>
+
+<button class="redButton" onclick="addComment()">Comment</button>
+
+<div class="Text">
+    <h2>All Comments</h2>
+    <div class="allComments" id="listAllComments">
+    </div>
+</div>
+
+</div>
+
+<!-- Javascript for Trash  -->
+<script src="..\scripts\postslist.js"></script>
+<script src="..\scripts\post.js"></script>
+<script src="..\scripts\header.js"></script>
+<script src="..\scripts\index.js"></script>
 
 </body>
 

@@ -4,7 +4,7 @@ html {
 }
 
 body {
-    background: url(../images/background.jpg);
+    background: url('../images/background.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center center;
@@ -20,49 +20,6 @@ body {
     justify-content: flex-start;
     height: 100%;
     width: 100%;
-}
-
-.header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 10px;
-}
-
-.title-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.login-button {
-    background-color: blue;
-    padding: 8px 5px 8px 5px;
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 80%;
-    border-color: white;
-    width: 100px;
-    margin-right: 10px;
-
-}
-
-.title {
-    font-family: 'Montez', cursive;
-    font-size: 30px;
-    color: blue;
-    margin: 0;
-}
-
-.sub-title {
-    font-family: 'Marck Script', cursive;
-    font-size: 10;
-    color: black;
-    margin: 0;
-}
-
-.loginButtons {
-    padding: 10px;
 }
 
 .post-button {
