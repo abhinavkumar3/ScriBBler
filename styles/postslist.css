@@ -112,7 +112,7 @@ html{
    justify-content: space-between;
 }
 
-.trash-modal-button-no {
+.deleteNoButton {
    background-color:rgb(214, 71, 71);
    width:25%;
    cursor: pointer;
@@ -124,7 +124,7 @@ html{
    font-size: 15px;
 }
 
-.trash-modal-button-yes {
+.deleteYesButton {
    background-color:  rgb(56, 143, 56);
    width: 25%;
    cursor: pointer;

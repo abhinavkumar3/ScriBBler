@@ -9,7 +9,7 @@
 
     <!--  CSS -->
     <link href='..\styles\postslist.css' rel='stylesheet' type='text/css'>
-    <link href='..\styles\header.css' rel='stylesheet' type='text/css'>
+    <link href='..\styles\common.css' rel='stylesheet' type='text/css'>
     <link href='..\styles\post.css' rel='stylesheet' type='text/css'>
 
     <!-- TODO: Include Font Awesome file here -->
@@ -108,9 +108,11 @@
         <!-- Insert code for Edit/Save button and  -->
 
         <h2 class="postAuthor">Srishti Gupta<span> 
-            <button onclick="editComment()" class="redButton" id="btnEditComment">
-                Edit 
-                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+            <button onclick="editComment()" class="redButton">
+            <div id="btnEditComment">Edit <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+            </div>               
+            <div id="btnSaveComment" style="display: none;">Save <i class="fa fa-floppy-o" aria-hidden="true"></i>
+            </div>                
             </button>
          </span>
         </h2>
@@ -125,8 +127,10 @@
 
 
     <div>
-        <button class="redButton" onclick="incrementCounter()">Like
-            <i class="fa fa-thumbs-up" aria-hidden="true"></i></button>
+        <button class="redButton" onclick="incrementCounter()">
+            <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+            <class="text" id="lblLike">Like</class>
+        </button>
         <p class="Text">
             <span id="counterLikedBy">1</span> person likes this!</p>
         <p class="Text">Be the first one to like this!</div>
@@ -152,7 +156,7 @@
 <!-- Javascript for Trash  -->
 <script src="..\scripts\postslist.js"></script>
 <script src="..\scripts\post.js"></script>
-<script src="..\scripts\header.js"></script>
+<script src="..\scripts\common.js"></script>
 <script src="..\scripts\index.js"></script>
 
 </body>

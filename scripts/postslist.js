@@ -11,3 +11,10 @@ function closeContainer() {
 function navigateToPost() {
     location.href = "post.html";
 }
+
+function deletePost(post,deleteYesButton){
+    if(deleteYesButton.onclick){
+        var modal = post;
+        modal.remove();
+    }
+}

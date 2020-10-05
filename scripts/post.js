@@ -34,6 +34,40 @@ function addComment() {
 function incrementCounter() {
     var cntr = document.getElementById('counterLikedBy');
     var val = parseInt(cntr.innerText);
-    cntr.innerText = val + 1;
+    cntr.innerText = val + 1;    
 
+    //Like to be updated to Liked
+    var cntrLike = document.getElementById('lblLike');
+    cntrLike.innerText = "Liked";
+}
+
+function editComment(){
+    var btn = document.getElementById("btnEditComment");
+    var img =document.getElementById("btnSaveComment");
+
+    var editTitle = document.getElementById("blogTitleNew");
+    var editBlog = document.getElementById("blogBody");
+
+    //for edit content and save button.
+    if(btn.innerText === "Edit ") {
+
+        //Edit/Save visibility
+        img.style.display = 'block';
+        btn.style.display = 'none';
+        //changing the style and edit option
+        editTitle.style.border = '2px solid pink';
+        editTitle.contentEditable = "true";
+        editBlog.style.border = '2px solid pink';
+        editBlog.contentEditable = "true";
+    } else {
+        //Edit/Save visibility
+        img.style.display = 'none';
+        btn.style.display = 'block';
+        //changing the style and edit option
+        editTitle.style.border = '';
+        editTitle.contentEditable = "false";
+        editBlog.style.border = '';
+        editBlog.contentEditable = "false";
+
+    }
 }
